@@ -1,0 +1,54 @@
+<nav class="bg-gray-800">
+  <nav class="fixed top-0 left-0 w-full z-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <a
+              (click)="navigateTo('home')"
+              class="text-gray-800 font-bold text-xl"
+              >PARKINGLY</a
+            >
+          </div>
+        </div>
+        <div class="hidden sm:block">
+          <div class="ml-4 flex items-center space-x-4">
+            <a (click)="navigateTo('home')" class="nav-item-large">Home</a>
+          </div>
+        </div>
+        <div class="flex sm:hidden">
+          <button
+            (click)="toggleMobileMenu()"
+            class="text-gray-500 hover:text-gray-300 focus:outline-none focus:text-gray-300"
+          >
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div
+    *ngIf="isMobileMenuOpen"
+    class="fixed flex-col inset-0 flex items-center justify-center z-50 bg-white"
+  >
+    <div class="flex items-center justify-end mb-4">
+      <button
+        (click)="toggleMobileMenu()"
+        class="text-gray-800 hover:text-gray-500 focus:outline-none focus:text-gray-500"
+      >
+        <i class="fas fa-times fa-lg"></i>
+      </button>
+    </div>
+    <div class="p-4">
+      <div class="flex flex-col items-center">
+        <a
+          (click)="navigateTo('home')"
+          (click)="closeMobileMenu()"
+          class="nav-item"
+          >Home</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

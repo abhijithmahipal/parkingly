@@ -1,0 +1,22 @@
+[app-navbar] .fixed {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[app-navbar] .fixed.in {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-item {
+  @apply text-gray-800 hover:text-gray-500 my-2 text-3xl;
+}
+
+.nav-item-large {
+  @apply text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium;
+}
+
+a {
+  @apply cursor-pointer;
+}
